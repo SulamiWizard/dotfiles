@@ -1,0 +1,122 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+
+[[blocks]]
+  type = 'rprompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'diamond'
+    leading_diamond = ''
+    template = '{{ if .Env.PNPPSHOST }}  {{ .Env.PNPPSHOST }} {{ end }}'
+    background = 'p:tan'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'powerline'
+    powerline_symbol = ''
+    template = '{{ if .Env.PNPPSSITE }}  {{ .Env.PNPPSSITE }}{{ end }}'
+    background = 'p:teal'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'diamond'
+    trailing_diamond = ''
+    template = '{{ if .Env.PNPPSSITE }} {{ end }}'
+    background = 'p:teal'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    type = 'session'
+    style = 'diamond'
+    leading_diamond = ''
+    template = '{{ .UserName }} '
+    background = 'p:plum'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'powerline'
+    powerline_symbol = ''
+    template = ' {{ .Path }} '
+    background = 'p:blush'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+    [blocks.segments.properties]
+      style = 'folder'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'powerline'
+    powerline_symbol = ''
+    template = ' ➜ ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}) '
+    background = 'p:salmon'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      fetch_stash_count = true
+      fetch_status = false
+      fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    type = 'node'
+    style = 'powerline'
+    powerline_symbol = ''
+    template = '  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} '
+    background = 'p:sky'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+  [[blocks.segments]]
+    type = 'time'
+    style = 'diamond'
+    trailing_diamond = ''
+    template = ' ♥ {{ .CurrentDate | date .Format }} '
+    background = 'p:teal_blue'
+    foreground = 'p:white'
+    Text = ''
+    Duration = 0
+    NameLength = 0
+
+    [blocks.segments.properties]
+      time_format = '15:04'
+
+[palette]
+  blush = '#DA627D'
+  plum = '#9A348E'
+  salmon = '#FCA17D'
+  sky = '#86BBD8'
+  tan = '#CC3802'
+  teal = '#047E84'
+  teal_blue = '#33658A'
+  white = '#FFFFFF'
