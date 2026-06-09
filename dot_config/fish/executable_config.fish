@@ -12,5 +12,6 @@ alias suspend="systemctl suspend"
 alias y=yazi
 alias n=nvim
 alias vim=nvim
+alias cat=bat
 
 zoxide init fish | source
